@@ -23,142 +23,95 @@
     max-width: 480px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.1);
   }
-  .logo {
-    font-size: 28px;
-    font-weight: 800;
-    color: #E8201A;
-    text-align: center;
-    margin-bottom: 4px;
+  .logo { font-size: 28px; font-weight: 800; color: #E8201A; text-align: center; margin-bottom: 4px; }
+  .subtitle { text-align: center; color: #888; font-size: 13px; margin-bottom: 28px; }
+  .section { margin-bottom: 16px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #444; margin-bottom: 6px; }
+  .token-wrap { position: relative; }
+  .token-wrap input {
+    width: 100%;
+    padding: 12px 44px 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: monospace;
   }
-  .subtitle {
-    text-align: center;
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 28px;
+  .token-wrap input:focus { border-color: #E8201A; }
+  .token-wrap .eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
   }
-  .section { margin-bottom: 20px; }
-  label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 6px;
-  }
+  .token-hint { font-size: 11px; color: #aaa; margin-top: 4px; }
   .upload-area {
     border: 2px dashed #ddd;
     border-radius: 12px;
-    padding: 32px 20px;
+    padding: 28px 20px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s;
     background: #fafafa;
   }
-  .upload-area:hover, .upload-area.dragover {
-    border-color: #E8201A;
-    background: #fff5f5;
-  }
-  .upload-area .icon { font-size: 40px; margin-bottom: 10px; }
+  .upload-area:hover, .upload-area.dragover { border-color: #E8201A; background: #fff5f5; }
+  .upload-area .icon { font-size: 36px; margin-bottom: 8px; }
   .upload-area .text { color: #666; font-size: 14px; }
   .upload-area .hint { color: #aaa; font-size: 12px; margin-top: 4px; }
   .file-name {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #f0f8ff;
-    border-radius: 8px;
-    font-size: 13px;
-    color: #333;
-    display: none;
+    margin-top: 8px; padding: 8px 12px;
+    background: #f0f8ff; border-radius: 8px;
+    font-size: 13px; color: #333; display: none;
   }
   .btn {
-    width: 100%;
-    padding: 15px;
-    background: #E8201A;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    margin-top: 8px;
+    width: 100%; padding: 15px;
+    background: #E8201A; color: white;
+    border: none; border-radius: 12px;
+    font-size: 16px; font-weight: 700;
+    cursor: pointer; transition: opacity 0.2s; margin-top: 8px;
   }
   .btn:hover { opacity: 0.9; }
   .btn:disabled { background: #ccc; cursor: not-allowed; }
   .log {
-    margin-top: 16px;
-    padding: 14px;
-    background: #1a1a1a;
-    border-radius: 10px;
-    font-size: 12px;
-    font-family: monospace;
-    color: #00ff88;
-    max-height: 180px;
-    overflow-y: auto;
-    display: none;
-    line-height: 1.8;
+    margin-top: 14px; padding: 14px;
+    background: #1a1a1a; border-radius: 10px;
+    font-size: 12px; font-family: monospace;
+    color: #00ff88; max-height: 160px;
+    overflow-y: auto; display: none; line-height: 1.8;
   }
-  /* ビルド状況パネル */
   .build-panel {
-    margin-top: 16px;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 12px;
-    overflow: hidden;
-    display: none;
+    margin-top: 14px; border: 1.5px solid #e5e7eb;
+    border-radius: 12px; overflow: hidden; display: none;
   }
   .build-header {
-    padding: 10px 14px;
-    background: #f9fafb;
-    font-size: 13px;
-    font-weight: 600;
-    color: #444;
+    padding: 10px 14px; background: #f9fafb;
+    font-size: 13px; font-weight: 600; color: #444;
     border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
   }
-  .build-status {
-    padding: 12px 14px;
-    font-size: 13px;
-    color: #555;
-  }
-  .build-status .row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 0;
-  }
+  .build-status { padding: 12px 14px; font-size: 13px; color: #555; }
+  .build-status .row { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
   .build-status .label { color: #888; min-width: 60px; font-size: 12px; }
   .build-status .value { font-weight: 600; }
   .spinner {
     width: 14px; height: 14px;
-    border: 2px solid #ddd;
-    border-top-color: #E8201A;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    display: inline-block;
+    border: 2px solid #ddd; border-top-color: #E8201A;
+    border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-  .dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .dot.running  { background: #f59e0b; }
-  .dot.success  { background: #22c55e; }
-  .dot.failure  { background: #ef4444; }
-  .dot.waiting  { background: #94a3b8; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot.running { background: #f59e0b; }
+  .dot.success { background: #22c55e; }
+  .dot.failure { background: #ef4444; }
+  .dot.waiting { background: #94a3b8; }
   .open-link {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    padding: 10px;
-    background: #22c55e;
-    color: white;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    display: none;
+    display: none; text-align: center; margin-top: 10px;
+    padding: 12px; background: #22c55e; color: white;
+    border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none;
   }
   input[type="file"] { display: none; }
 </style>
@@ -167,6 +120,15 @@
 <div class="card">
   <div class="logo">クロレコ</div>
   <div class="subtitle">デプロイツール</div>
+
+  <div class="section">
+    <label>GitHub Token</label>
+    <div class="token-wrap">
+      <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      <span class="eye" id="eyeBtn">👁</span>
+    </div>
+    <div class="token-hint">※ メモ帳からコピー&ペーストしてください</div>
+  </div>
 
   <div class="section">
     <label>ZIPファイルを選択</label>
@@ -183,7 +145,6 @@
 
   <div class="log" id="log"></div>
 
-  <!-- ビルド状況パネル -->
   <div class="build-panel" id="buildPanel">
     <div class="build-header">
       <div class="spinner" id="buildSpinner"></div>
@@ -202,28 +163,37 @@
 const OWNER  = 'sharpcraft0826-create';
 const REPO   = 'kuroreko';
 const BRANCH = 'main';
-const TOKEN  = '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';
 
-const uploadArea  = document.getElementById('uploadArea');
-const fileInput   = document.getElementById('fileInput');
-const fileName    = document.getElementById('fileName');
-const deployBtn   = document.getElementById('deployBtn');
-const log         = document.getElementById('log');
-const buildPanel  = document.getElementById('buildPanel');
-const buildStatus = document.getElementById('buildStatus');
+const tokenInput      = document.getElementById('token');
+const eyeBtn          = document.getElementById('eyeBtn');
+const uploadArea      = document.getElementById('uploadArea');
+const fileInput       = document.getElementById('fileInput');
+const fileName        = document.getElementById('fileName');
+const deployBtn       = document.getElementById('deployBtn');
+const log             = document.getElementById('log');
+const buildPanel      = document.getElementById('buildPanel');
+const buildStatus     = document.getElementById('buildStatus');
 const buildHeaderText = document.getElementById('buildHeaderText');
-const buildSpinner = document.getElementById('buildSpinner');
-const openLink    = document.getElementById('openLink');
+const buildSpinner    = document.getElementById('buildSpinner');
+const openLink        = document.getElementById('openLink');
 
 let selectedFile = null;
-let pollTimer = null;
+let pollTimer    = null;
+
+// トークン表示/非表示
+eyeBtn.addEventListener('click', () => {
+  const isHidden = tokenInput.type === 'password';
+  tokenInput.type = isHidden ? 'text' : 'password';
+  eyeBtn.textContent = isHidden ? '🙈' : '👁';
+});
+
+tokenInput.addEventListener('input', updateBtn);
 
 uploadArea.addEventListener('click', () => fileInput.click());
 uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('dragover'); });
 uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
 uploadArea.addEventListener('drop', e => {
-  e.preventDefault();
-  uploadArea.classList.remove('dragover');
+  e.preventDefault(); uploadArea.classList.remove('dragover');
   const file = e.dataTransfer.files[0];
   if (file && file.name.endsWith('.zip')) setFile(file);
 });
@@ -233,7 +203,11 @@ function setFile(file) {
   selectedFile = file;
   fileName.textContent = '📄 ' + file.name;
   fileName.style.display = 'block';
-  deployBtn.disabled = false;
+  updateBtn();
+}
+
+function updateBtn() {
+  deployBtn.disabled = !(selectedFile && tokenInput.value.trim());
 }
 
 function addLog(msg) {
@@ -242,11 +216,13 @@ function addLog(msg) {
   log.scrollTop = log.scrollHeight;
 }
 
+function getToken() { return tokenInput.value.trim(); }
+
 async function getFileSha(path) {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}?ref=${BRANCH}`,
-      { headers: { Authorization: `token ${TOKEN}`, Accept: 'application/vnd.github.v3+json' } }
+      { headers: { Authorization: `token ${getToken()}`, Accept: 'application/vnd.github.v3+json' } }
     );
     if (res.status === 404) return null;
     const data = await res.json();
@@ -263,7 +239,7 @@ async function uploadFile(path, content) {
     {
       method: 'PUT',
       headers: {
-        Authorization: `token ${TOKEN}`,
+        Authorization: `token ${getToken()}`,
         Accept: 'application/vnd.github.v3+json',
         'Content-Type': 'application/json',
       },
@@ -273,52 +249,35 @@ async function uploadFile(path, content) {
   if (!res.ok) { const e = await res.json(); throw new Error(e.message); }
 }
 
-// ビルド状況をポーリング
 async function pollBuildStatus() {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${OWNER}/${REPO}/actions/runs?branch=${BRANCH}&per_page=1`,
-      { headers: { Authorization: `token ${TOKEN}`, Accept: 'application/vnd.github.v3+json' } }
+      { headers: { Authorization: `token ${getToken()}`, Accept: 'application/vnd.github.v3+json' } }
     );
     const data = await res.json();
     const run = data.workflow_runs?.[0];
     if (!run) return;
 
-    const status     = run.status;     // queued / in_progress / completed
-    const conclusion = run.conclusion; // success / failure / null
+    const status     = run.status;
+    const conclusion = run.conclusion;
     const startedAt  = run.run_started_at ? new Date(run.run_started_at) : null;
-    const now        = new Date();
-    const elapsed    = startedAt ? Math.floor((now - startedAt) / 1000) : 0;
-    const mins       = Math.floor(elapsed / 60);
-    const secs       = elapsed % 60;
-    const elapsedStr = startedAt ? `${mins}分${secs}秒` : '-';
+    const elapsed    = startedAt ? Math.floor((new Date() - startedAt) / 1000) : 0;
+    const elapsedStr = startedAt ? `${Math.floor(elapsed/60)}分${elapsed%60}秒` : '-';
 
-    let statusText = '';
-    let dotClass   = 'waiting';
-    let headerText = 'ビルド状況を確認中...';
-    let isDone     = false;
+    let dotClass = 'waiting', headerText = '確認中...', isDone = false, statusText = '';
 
-    if (status === 'queued') {
-      statusText = '待機中';
-      dotClass   = 'waiting';
-      headerText = '⏳ ビルド待機中...';
-    } else if (status === 'in_progress') {
-      statusText = 'ビルド中';
-      dotClass   = 'running';
-      headerText = '🔨 ビルド中...';
-    } else if (status === 'completed') {
+    if (status === 'queued')       { dotClass = 'waiting'; headerText = '⏳ 待機中...';    statusText = '待機中'; }
+    else if (status === 'in_progress') { dotClass = 'running'; headerText = '🔨 ビルド中...'; statusText = 'ビルド中'; }
+    else if (status === 'completed') {
       isDone = true;
       if (conclusion === 'success') {
-        statusText = '✅ 成功';
-        dotClass   = 'success';
-        headerText = '🎉 デプロイ完了！';
+        dotClass = 'success'; headerText = '🎉 デプロイ完了！'; statusText = '✅ 成功';
         buildSpinner.style.display = 'none';
         openLink.style.display = 'block';
         clearInterval(pollTimer);
       } else {
-        statusText = '❌ 失敗';
-        dotClass   = 'failure';
-        headerText = '❌ ビルド失敗';
+        dotClass = 'failure'; headerText = '❌ ビルド失敗'; statusText = '❌ 失敗';
         buildSpinner.style.display = 'none';
         clearInterval(pollTimer);
       }
@@ -326,28 +285,15 @@ async function pollBuildStatus() {
 
     buildHeaderText.textContent = headerText;
     buildStatus.innerHTML = `
-      <div class="row">
-        <span class="label">状況</span>
-        <span class="dot ${dotClass}"></span>
-        <span class="value">${statusText}</span>
-      </div>
-      <div class="row">
-        <span class="label">経過時間</span>
-        <span class="value">${elapsedStr}</span>
-      </div>
-      <div class="row">
-        <span class="label">ブランチ</span>
-        <span class="value">${BRANCH}</span>
-      </div>
+      <div class="row"><span class="label">状況</span><span class="dot ${dotClass}"></span><span class="value">${statusText}</span></div>
+      <div class="row"><span class="label">経過時間</span><span class="value">${elapsedStr}</span></div>
       ${isDone && conclusion !== 'success' ? '<div class="row" style="color:#ef4444;font-size:12px;margin-top:4px;">GitHubのActionsタブでエラーを確認してください</div>' : ''}
     `;
-  } catch (e) {
-    console.error('poll error', e);
-  }
+  } catch(e) { console.error(e); }
 }
 
 deployBtn.addEventListener('click', async () => {
-  if (!selectedFile) return;
+  if (!selectedFile || !getToken()) return;
   deployBtn.disabled = true;
   log.innerHTML = '';
   log.style.display = 'block';
@@ -362,8 +308,7 @@ deployBtn.addEventListener('click', async () => {
 
     const targets = files.filter(f =>
       f.path.match(/^(lib|assets|web)\//) ||
-      f.path === 'pubspec.yaml' ||
-      f.path === 'pubspec.lock'
+      f.path === 'pubspec.yaml' || f.path === 'pubspec.lock'
     );
 
     addLog(`✅ ${targets.length}ファイルを検出`);
@@ -378,16 +323,14 @@ deployBtn.addEventListener('click', async () => {
     addLog(`\n🎉 ${success}ファイルをアップロード完了`);
     addLog('⏳ GitHub Actionsでビルド開始...');
 
-    // ビルド状況パネルを表示してポーリング開始
     buildPanel.style.display = 'block';
     buildSpinner.style.display = 'inline-block';
     buildHeaderText.textContent = 'ビルド開始待ち...';
     buildStatus.innerHTML = '';
 
-    // 5秒後にポーリング開始（Actions起動まで少し待つ）
     setTimeout(() => {
       pollBuildStatus();
-      pollTimer = setInterval(pollBuildStatus, 10000); // 10秒ごとに更新
+      pollTimer = setInterval(pollBuildStatus, 10000);
     }, 5000);
 
   } catch (e) {
